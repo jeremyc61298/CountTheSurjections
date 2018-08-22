@@ -15,7 +15,6 @@ unsigned long long calcNI(unsigned long long n, unsigned long long i)
 	{
 		result = calcNI(n - 1, i - 1) + calcNI(n - 1, i);
 	}
-
 	return result;
 }
 
@@ -71,7 +70,9 @@ void main()
 	{
 		ans = S(m, n);
 		// Output the answer to the file
-		fout << "S(" << m << ", " << n << ") = " << ans << endl;
+		fout << "S(" << m << ", " << n << ") = " << ans;
 		fin >> m >> n;
+		if (m != 0 && n != 0)
+			fout << endl;
 	}
 }

@@ -3,6 +3,11 @@
 using std::ifstream;
 using std::ofstream;
 
+void S(unsigned long long &m, unsigned long long &n)
+{
+
+}
+
 void main()
 {
 	ifstream fin("surjections.in");
@@ -13,7 +18,7 @@ void main()
 
 	while (m != 0 && n != 0)
 	{
-		// Call S
+		S(m, n);
 		fin >> m >> n;
 	}
 }

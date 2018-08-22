@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="surjections.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CountTheSurjections.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <None Include="surjections.in">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="surjections.out">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

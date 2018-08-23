@@ -1,7 +1,12 @@
+// surjections.cpp
+// Jeremy Campbell
+
+#include <iostream>
 #include <fstream>
 
 using std::ifstream;
 using std::ofstream;
+using std::cout;
 using std::endl;
 
 unsigned long long calcNI(unsigned long long n, unsigned long long i)
@@ -39,7 +44,7 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 	}
 	else if(n > 1 && m > n)
 	{
-		unsigned long long expn = 1, sum = 0, I = 1;
+		unsigned long long expn = 1, sum = 0;
 		// Calculate the exponent
 		for (int i = 0; i < m; i++)
 		{
@@ -49,7 +54,7 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 		// Calculate the second half of the equation
 		for (int i = 0; i < n - 1; i++)
 		{
-			sum += calcNI(n, I) * S(m, I);
+			sum += calcNI(n, 1) * S(m, 1);
 		}
 		
 		result = expn - sum;
@@ -58,21 +63,27 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 	return result;
 }
 
-void main()
+int main()
 {
 	ifstream fin("surjections.in");
+	if (!fin.is_open())
+	{
+		cout << "Input file could not be opened." << endl;
+		return -1;
+	}
 	ofstream fout("surjections.out");
 	unsigned long long m, n, ans;
 
 	fin >> m >> n;
 
-	while (m != 0 && n != 0)
+	while (m > 0 && n > 0)
 	{
 		ans = S(m, n);
 		// Output the answer to the file
 		fout << "S(" << m << ", " << n << ") = " << ans;
 		fin >> m >> n;
-		if (m != 0 && n != 0)
+		if (m > 0 && n > 0)
 			fout << endl;
 	}
+	return 0;
 }

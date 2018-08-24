@@ -44,11 +44,11 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 	}
 	else
 	{
-		unsigned long long expn = 1, sum = 0;
+		unsigned long long raisedN = 1, sum = 0;
 		// Calculate the exponential value
 		for (int i = 0; i < m; i++)
 		{
-			expn *= n;
+			raisedN *= n;
 		}
 
 		// Calculate the second half of the equation 
@@ -57,7 +57,7 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 			sum += calcNI(n, i) * S(m, i);
 		}
 		
-		result = expn - sum;
+		result = raisedN - sum;
 	}
 
 	return result;

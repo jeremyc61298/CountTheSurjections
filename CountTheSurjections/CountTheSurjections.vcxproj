@@ -22,6 +22,7 @@
     <ClCompile Include="surjections.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="surjections.ans" />
     <None Include="surjections.in" />
     <None Include="surjections.out" />
   </ItemGroup>

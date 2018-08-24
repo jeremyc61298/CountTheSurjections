@@ -42,19 +42,19 @@ unsigned long long S(unsigned long long m, unsigned long long n)
 			result *= i;
 		}
 	}
-	else if(n > 1 && m > n)
+	else
 	{
 		unsigned long long expn = 1, sum = 0;
-		// Calculate the exponent
+		// Calculate the exponential value
 		for (int i = 0; i < m; i++)
 		{
 			expn *= n;
 		}
 
-		// Calculate the second half of the equation
-		for (int i = 0; i < n - 1; i++)
+		// Calculate the second half of the equation 
+		for (int i = 1; i <= n - 1; i++)
 		{
-			sum += calcNI(n, 1) * S(m, 1);
+			sum += calcNI(n, i) * S(m, i);
 		}
 		
 		result = expn - sum;
@@ -80,7 +80,7 @@ int main()
 	{
 		ans = S(m, n);
 		// Output the answer to the file
-		fout << "S(" << m << ", " << n << ") = " << ans;
+		fout << "S(" << m << "," << n << ") = " << ans;
 		fin >> m >> n;
 		if (m > 0 && n > 0)
 			fout << endl;

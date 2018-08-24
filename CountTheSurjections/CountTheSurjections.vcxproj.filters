@@ -26,5 +26,8 @@
     <None Include="surjections.out">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="surjections.ans">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
